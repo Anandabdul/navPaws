@@ -1,0 +1,41 @@
+.outer-div {
+  background-color: rgb(255, 208, 0);
+  background: linear-gradient(45deg, rgba(238,225,175,1) 0%, rgba(253,205,29,1) 50%, rgba(252,176,69,1) 100%);
+  background: linear-gradient();
+  width: 400px;
+  padding: 30px 0px 30px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 4px;
+  transition: 0.15s;
+}
+
+.login-inner-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+
+}
+
+.login-inner-div input {
+  width: 250px;
+}
+
+.login-inner-div button{
+  background-color: rgb(61, 61, 61);
+  width: 250px;
+  color: white;
+  cursor: url(./pawCursor.png), auto;
+}
+
+.login-inner-div button:hover{
+  background-color: rgb(99, 99, 99);
+}
+
+.login-inner-div button:active{
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.4);
+}

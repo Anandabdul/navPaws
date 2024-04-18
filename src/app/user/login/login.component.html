@@ -1,0 +1,20 @@
+
+<h3>Log in</h3>
+
+  <div class="outer-div">
+    <div class="login-inner-div">
+      <div><input [(ngModel)]="regUsername" type="text" placeholder="Username"></div>
+      <br>
+      <div><input [(ngModel)]="regPassword" type="password" placeholder="Password"></div>
+      <br>
+      <div><button (click)="checkLogin()" class="btn">Log in</button></div>
+    </div>
+    {{msg}}
+  
+    <div style="margin-top: 10px;">
+      <a [routerLink]="registerPage">Don't have an account?</a>
+    </div>
+  </div>
+  
+
+  <!-- (click)="redirectToHome()" -->
