@@ -1,1 +1,44 @@
-<p>rescue works!</p>
+<app-navbar></app-navbar>
+
+<form [formGroup]="rescueForm" (ngSubmit)="postRescue()" style="margin-top: 65px; margin-bottom: 15px;" class="container w-50">
+  <h3 class="text-center my-2">Submit Animal's Details to Proceed Rescueing</h3>
+  <div class="mb-3">
+    <label for="animalType" class="form-label">Animal type*</label>
+    <select required formControlName="animalType" type="text" class="form-select  bg-secondary-subtle" id="animalType">
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="others">Others</option>
+    </select>
+    <div id="animalTypeHelp" class="form-text">If Others Specify its Type Below.</div>
+    <input formControlName="animalTypeOthers" type="text" class="form-control bg-secondary-subtle" id="animalTypeOthers">
+  </div>
+  <div class="mb-3">
+    <label for="animalColor" class="form-label">Color*</label>
+    <input formControlName="animalColor" required type="text" class="form-control bg-secondary-subtle" id="animalColor">
+  </div>
+  <div class="mb-3">
+    <label for="whatHappened" class="form-label" aria-describedby="Help">What Happened?*</label>
+    <div id="whatHpnHelp" class="form-text">Specify Briefly about What Happened to the Animal.</div>
+    <textarea formControlName="whatHappened" required type="Text" rows="4" class="form-control bg-secondary-subtle" id="whatHappened"  aria-describedby="whatHpnHelp"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="address" class="form-label">Address*</label>
+    <textarea required formControlName="address" type="text" rows="2" class="form-control bg-secondary-subtle" id="address"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="mobNumber" class="form-label">Your Mobile Number*</label>
+    <input required formControlName="mobNumber" type="number" class="form-control bg-secondary-subtle" id="mobNumber">
+  </div>
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" id="terms" name="terms" required>
+    <label class="form-text" for="terms">
+      &nbsp;I agree to the <a href="" target="_blank">Terms of Service</a> and <a href="" target="_blank">Privacy Policy</a>.
+    </label>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-outline-warning w-50">Submit</button>
+  </div>
+</form>

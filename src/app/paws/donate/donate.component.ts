@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from 'src/app/services/session.service';
-import { globalConstant } from 'src/app/common/global.constant';
 
 @Component({
   selector: 'app-donate',
@@ -15,6 +14,4 @@ export class DonateComponent implements OnInit{
     this.SessionService.checkUserSession();
   }
   
- 
-
 }

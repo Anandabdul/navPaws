@@ -1,10 +1,17 @@
-<p>home works!</p>
+<app-navbar></app-navbar>
 
-<div style="display: flex; flex-wrap: wrap; max-width: 600px; margin: 20px;">
-  <div class="card" style="width: 200px; margin-right: 10px; margin-bottom: 10px; padding: 20px;"><a [routerLink]="rescuePage">Rescue</a></div>
-  <div class="card" style="width: 200px; margin-right: 10px; margin-bottom: 10px; padding: 20px;"><a [routerLink]="volunteerPage">Volunteer</a></div>
-  <div class="card" style="width: 200px; margin-right: 10px; margin-bottom: 10px; padding: 20px;"><a [routerLink]="donatePage">Donate</a></div>
-  <div class="card" style="width: 200px; margin-right: 10px; margin-bottom: 10px; padding: 20px;"><a [routerLink]="firstAidPage">First Aid</a></div>
-  <div class="card" style="width: 200px; margin-right: 10px; margin-bottom: 10px; padding: 20px;"><a [routerLink]="sucsessBlogPage">Success Blogs</a></div>
-  <!-- <div class="card" style="width: 200px; margin-right: 10px; margin-bottom: 10px; padding: 20px;"><a [routerLink]="">Chat Bot</a></div> -->
-</div>
+<main class="position-relative overflow-hidden" style="margin-top: 60px;">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1440" height="560" preserveAspectRatio="none" viewBox="0 0 1440 560"><g mask="url(&quot;#SvgjsMask1043&quot;)" fill="none"><path d="M 0,158 C 57.6,130.6 172.8,21.2 288,21 C 403.2,20.8 460.8,158 576,157 C 691.2,156 748.8,3.6 864,16 C 979.2,28.4 1036.8,205 1152,219 C 1267.2,233 1382.4,112.6 1440,86L1440 560L0 560z" fill="rgba(239, 216, 121, 1)"></path><path d="M 0,511 C 96,466 288,302.4 480,286 C 672,269.6 768,418.2 960,429 C 1152,439.8 1344,357.8 1440,340L1440 560L0 560z" fill="rgba(229, 178, 78, 1)"></path></g><defs><mask id="SvgjsMask1043"><rect width="1440" height="560" fill="#ffffff"></rect></mask></defs></svg>
+  <article class="position-absolute z-1" style="left: 10rem; top: 5rem;" >  
+    <Section>
+      <div class="row row-cols-2 justify-content-center">
+        <div class="col-sm-4 p-4 m-2 align-items-center fs-3 card bg-secondary-subtle"><a class="text-decoration-none text-reset" [routerLink]="rescuePage">Rescue?</a></div>
+        <div class="col-sm-4 p-4 m-2 align-items-center fs-3 card bg-secondary-subtle"><a class="text-decoration-none text-reset" [routerLink]="volunteerPage">Volunteer</a></div>
+        <div class="col-sm-4 p-4 m-2 align-items-center fs-3 card bg-secondary-subtle"><a class="text-decoration-none text-reset" [routerLink]="donatePage">Donate</a></div>
+        <div class="col-sm-4 p-4 m-2 align-items-center fs-3 card bg-secondary-subtle"><a class="text-decoration-none text-reset" [routerLink]="firstAidPage">First Aid</a></div>
+        <div class="col-sm-4 p-4 m-2 align-items-center fs-3 card bg-secondary-subtle"><a class="text-decoration-none text-reset" [routerLink]="sucsessBlogPage">Success Blogs</a></div>
+        <div class="col-sm-4 p-4 m-2 align-items-center fs-3 card bg-secondary-subtle"><a class="text-decoration-none text-reset" [routerLink]="adoptPage">Adopt</a></div>
+      </div>
+    </Section>
+  </article>
+</main>

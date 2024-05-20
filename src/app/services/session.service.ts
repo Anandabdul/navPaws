@@ -7,9 +7,7 @@ import { globalConstant } from '../common/global.constant';
 })
 export class SessionService {
 
-  constructor(private router: Router, private SessionService: SessionService) { }
-
-  userSession: string = "user";
+  constructor(private router: Router) { }
 
   setSession(sskey: string, ssValue: string) : void{
     sessionStorage.setItem(sskey,ssValue);
@@ -26,7 +24,12 @@ export class SessionService {
 
   checkUserSession() {
     if(!this.checkSession(globalConstant.userSession)){
-      this.router.navigate(['']);
+      this.router.navigate(['/']);
     }
+  }
+
+  removeSession() {
+    sessionStorage.removeItem(globalConstant.userSession);
+    this.router.navigate(['/']);
   }
 }

@@ -15,6 +15,13 @@ import { FormsModule } from '@angular/forms';
 import { ForgotPswdComponent } from './user/forgot-pswd/forgot-pswd.component';
 import { LogoutComponent } from './user/logout/logout.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './paws/navbar/navbar.component';
+import { AdoptComponent } from './paws/adopt/adopt.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RescueAdminComponent } from './pawsAdmin/rescue-admin/rescue-admin.component';
+import { NavBarAdminComponent } from './pawsAdmin/nav-bar-admin/nav-bar-admin.component';
+import { DonateAdminComponent } from './pawsAdmin/donate-admin/donate-admin.component';
+import { VolunteerAdminComponent } from './pawsAdmin/volunteer-admin/volunteer-admin.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +35,20 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FirstAidComponent,
     DonateComponent,
     ForgotPswdComponent,
-    LogoutComponent
+    LogoutComponent,
+    NavbarComponent,
+    AdoptComponent,
+    RescueAdminComponent,
+    NavBarAdminComponent,
+    DonateAdminComponent,
+    VolunteerAdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

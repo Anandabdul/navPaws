@@ -1,33 +1,30 @@
-<h3>Register page</h3>
 
 
-<div class="outer-div">
+<div class="outer-div container mt-4">
+  <h3>Register page</h3>
   <div class="login-inner-div">
-    <div>
-      Select your Account Type:
-      <select name="accountType" id="accountType" required>
-        <option value="Select">--Select--</option>
-        <option value="Admin">Admin</option>
-        <option value="User">User</option>
-      </select>
-    </div><br>
-
-    <!-- <div>First Name: <input type="text" required></div>
-    <br>
-    <div>Last Name: <input type="text" required></div>
-    <br> -->
-    <div><input [(ngModel)]="regUsername" placeholder="Username" type="text" required></div>
-    <br>
-    <div><input [(ngModel)]="regEmail" placeholder="E-Mail" type="email" required></div>
-    <br>
-    <div><input [(ngModel)]="regMobNumber" placeholder="Mobile Number" type="number" required></div>
-    <br>
-    <div><input [(ngModel)]="regPswd" placeholder="Password" type="password" required></div>
-    <br>
-    <div><input [(ngModel)]="regCnfmPswd" placeholder="Confirm Password" type="password" required></div>
-    <br>
-    <div><button (click)="postUsers()" class="btn btn-success">Register</button></div>
-    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="postUsers()">
+      <div>
+        Select your Account Type:
+        <select name="accountType" id="accountType" formControlName="accountType" required>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+      </div><br>
+  
+      <div><input formControlName="regUsername" placeholder="Username" type="text" required></div>
+      <br>
+      <div><input formControlName="regEmail" placeholder="E-Mail" type="email" required></div>
+      <br>
+      <div><input formControlName="regMobNumber" placeholder="Mobile Number" type="number" required></div>
+      <br>
+      <div><input formControlName="regPswd" placeholder="Password" type="password" required></div>
+      <br>
+      <div><input formControlName="regCnfmPswd" placeholder="Confirm Password" type="password" required></div>
+      <br>
+      <div><button type="submit" class="btn btn-success">Register</button></div>
+    </form>
+  </div>
 
   <div style="margin-top: 10px;">
     <a [routerLink]="loginPage">Already have an account?</a>
