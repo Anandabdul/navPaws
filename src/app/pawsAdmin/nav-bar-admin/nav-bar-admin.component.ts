@@ -13,6 +13,7 @@ export class NavBarAdminComponent {
   volunteerAdminPage: string = "/volunteerAdmin";
   donateAdminPage: string = "/donateAdmin";
   rescueAdminPage: string = "/rescueAdmin";
+  petDataPage: string = "/petData";
 
   logout() {
     this.SessionService.removeSession();

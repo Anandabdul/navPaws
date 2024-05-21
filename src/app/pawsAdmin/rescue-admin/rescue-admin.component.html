@@ -1,1 +1,27 @@
 <app-nav-bar-admin></app-nav-bar-admin>
+
+<div style="margin-top: 60px;" class="container">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Animal Type</th>
+        <th>Animal Color</th>
+        <th>what Happened</th>
+        <th>Address</th>
+        <th>Mobile Number</th>
+        <th>Clear</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let rescueList of rescueLists">
+        <td class="p-2" >{{rescueList.animalType}}</td>
+        <td class="p-2" >{{rescueList.animalColor}}</td>
+        <td class="p-2" >{{rescueList.whatHappened}}</td>
+        <td class="p-2" >{{rescueList.address}}</td>
+        <td class="p-2" >{{rescueList.mobNumber}}</td>
+        <td class="p-2" ><button class="btn btn-danger" (click)="deleteRescueInfo(rescueList)">Clear</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

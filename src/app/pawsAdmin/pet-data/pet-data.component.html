@@ -1,0 +1,36 @@
+<app-nav-bar-admin></app-nav-bar-admin>
+
+<div style="margin-top: 60px;" class="container">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Pet Name</th>
+        <th>Pet Type</th>
+        <th>Age</th>
+        <th>Rescued Date</th>
+        <th>Rescued From</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th><input [(ngModel)]="petname" class="w-75" type="text"></th>
+        <th><input [(ngModel)]="petType" class="w-75" type="text"></th>
+        <th><input [(ngModel)]="petAge" class="w-75" type="number"></th>
+        <th><input [(ngModel)]="resDate" class="w-75" type="date"></th>
+        <th><input [(ngModel)]="resFrom" class="w-75" type="text"></th>
+        <td class="p-2" ><button class="btn btn-success" (click)="savePetData()">Add</button></td>
+      </tr>
+
+      <tr *ngFor="let data of petData">
+        <td class="p-2" >{{data.petName}}</td>
+        <td class="p-2" >{{data.animalType}}</td>
+        <td class="p-2" >{{data.age}}</td>
+        <td class="p-2" >{{data.rescuedDate}}</td>
+        <td class="p-2" >{{data.rescuedAddress}}</td>
+        <td class="p-2" ><button class="btn btn-danger" (click)="deletePetData(data)">Clear</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

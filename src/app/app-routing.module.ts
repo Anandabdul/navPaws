@@ -12,6 +12,7 @@ import { AdoptComponent } from './paws/adopt/adopt.component';
 import { DonateAdminComponent } from './pawsAdmin/donate-admin/donate-admin.component';
 import { RescueAdminComponent } from './pawsAdmin/rescue-admin/rescue-admin.component';
 import { VolunteerAdminComponent } from './pawsAdmin/volunteer-admin/volunteer-admin.component';
+import { PetDataComponent } from './pawsAdmin/pet-data/pet-data.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'adopt', component:AdoptComponent},
   {path:'donateAdmin',component:DonateAdminComponent},
   {path:'rescueAdmin',component:RescueAdminComponent},
-  {path:'volunteerAdmin',component:VolunteerAdminComponent}
+  {path:'volunteerAdmin',component:VolunteerAdminComponent},
+  {path: 'petData', component:PetDataComponent}
 
 ];
 
