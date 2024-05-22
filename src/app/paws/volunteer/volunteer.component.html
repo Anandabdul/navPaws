@@ -1,1 +1,56 @@
 <app-navbar></app-navbar>
+
+<main style="margin-top: 60px; margin-bottom: 30px;">
+  <h1 class="fw-bold my-3 text-center text-warning">VOLUNTEER WITH NAVPAWS</h1>
+  <section class="container fs-4 text-center mb-5">
+    Welcome to the Volunteers page of navPaws, your go-to animal rescue web application! Here, compassionate individuals
+    like you can make a tangible difference in the lives of animals in need. Our platform connects volunteers with a
+    variety of opportunities, from hands-on animal care to fostering and administrative support. Whether you have a few
+    hours a week or more time to give, there's a place for you in our community. Join us in creating a safe and loving
+    environment for rescued animals and be a part of the transformative journey towards their forever homes. Your
+    dedication and kindness can bring hope and happiness to countless animals waiting for a second chance. Sign up today
+    with navPaws and start making a difference!
+  </section>
+
+  <h3 class="fw-bold text-center text-warning">Join the Paw-sitive Change: Be a Part of Our Service!</h3>
+
+  <section>
+    <form [formGroup]="volunteerForm" (ngSubmit)="applyVolunteer()" style="margin-top: 65px; margin-bottom: 15px;"
+      class="container card p-3 w-50 shadow">
+      <div class="mb-3">
+        <label for="Name" class="form-label">Name*</label>
+        <input formControlName="name" type="text" class="form-control bg-secondary-subtle" id="name">
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age*</label>
+        <input formControlName="age" required type="number" class="form-control bg-secondary-subtle" id="age">
+      </div>
+      <div class="mb-3">
+        <label for="mobile" class="form-label" aria-describedby="Help">Mobile*</label>
+        <input formControlName="mobile" type="number" required class="form-control bg-secondary-subtle" id="mobile" />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">E-Mail*</label>
+        <input required formControlName="email" type="email" class="form-control bg-secondary-subtle" id="mobNumber">
+      </div>
+
+      <div class="mb-3">
+        <label for="address" class="form-label">Address*</label>
+        <textarea required formControlName="address" type="text" rows="2" class="form-control bg-secondary-subtle"
+          id="address"></textarea>
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label class="form-text" for="terms">
+          &nbsp;I agree to the <a href="" target="_blank">Terms of Service</a> and <a href="" target="_blank">Privacy
+            Policy</a>.
+        </label>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-outline-warning w-50">Submit</button>
+      </div>
+    </form>
+  </section>
+</main>
