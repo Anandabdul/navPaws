@@ -23,6 +23,8 @@ export class VolunteerAdminComponent implements OnInit{
   mobile: string = "";
   email: string = "";
   address: string = "";
+  position: string = "Newbie Volunteer";
+  id: string = "";
 
   getTempVolunteerData() {
 
@@ -45,7 +47,6 @@ export class VolunteerAdminComponent implements OnInit{
 
   savePerVolunteerData(data: any) {
     
-
     let permVolunteersInfo = {
       "name": data.name,
       "age": data.age,
@@ -72,12 +73,40 @@ export class VolunteerAdminComponent implements OnInit{
     );
   }
 
+  giveToUpdate(data: any) {
+    this.name = data.name;
+    this.age = data.age;
+    this.mobile = data.mobile;
+    this.email = data.email;
+    this.address = data.address;
+    this.id = data.id;
+  }
+
   updatePerVolunteerData() {
-    
+    let permVolunteersInfoUpdate = {
+      "name": this.name,
+      "age": this.age,
+      "mobile": this.mobile,
+      "email": this.email,
+      "address": this.address,
+      "position": this.position
+    };
+
+    this.HttpClient.put<any>(globalConstant.permVolunteersAPI + "/" + this.id, permVolunteersInfoUpdate).subscribe (
+      () => {
+        alert('data has been updated!')
+        this.ngOnInit();
+      }
+    );
   }
 
   deletePerVolunteerData() {
-
+    this.HttpClient.delete(globalConstant.permVolunteersAPI + "/" + this.id).subscribe (
+      () => {
+        alert('data has been deleted.')
+        this.ngOnInit();
+      }
+    );
   }
 
 }

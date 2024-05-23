@@ -25,8 +25,8 @@
       </tr>
     </tbody>
   </table>
-  <h2 class="text-center text-warning">Volunteer Members</h2>
 </div>
+<h2 class="text-center text-warning">Volunteer Members</h2>
 
   <section class="row m-5">
     <div *ngFor="let data of permVolunteerData" class="card col-sm-6 text-center m-2" style="width: 18rem;">
@@ -53,6 +53,55 @@
             </tr>
           </tbody>
         </table>
+        <button class="btn btn-warning w-75" (click)="giveToUpdate(data)">Edit</button>
       </div>
     </div>
   </section>
+
+  <h2 class="text-center text-warning">Edit Volunteer Members</h2>
+
+  <section class="row m-5 text-center">
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mobile</th>
+        <th>E-mail</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th><input [(ngModel)]="name" class="w-75" type="text"></th>
+        <th><input [(ngModel)]="age" class="w-75" type="number"></th>
+        <th><input [(ngModel)]="mobile" class="w-75" type="number"></th>
+        <th><input [(ngModel)]="email" class="w-75" type="email"></th>
+        <th><input [(ngModel)]="address" class="w-75" type="text"></th>
+        <!-- <td class="p-2" ><button class="btn btn-success" (click)="savePetData()">Add</button></td> -->
+      </tr>
+      
+      <tr>
+        <td></td>
+        <td>
+          <select [(ngModel)]="position" name="promotion" class="form-select" id="promotion">
+            <option value="Newbie Volunteer">Newbie Volunteer</option>
+            <option value="Senior Volunteer">Senior Volunteer</option>
+            <option value="Manager">Manager</option>
+            <option value="Vice Leader">Vice Leader</option>
+            <option value="Leader">Leader</option>
+          </select>
+        </td>
+        <td>
+          <button class="btn btn-success" (click)="updatePerVolunteerData()">Update Member</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deletePerVolunteerData()">Remove Member</button>
+        </td>
+        <td>{{this.id}}</td>
+      </tr>
+    </tbody>
+  </table>
+    </section>
