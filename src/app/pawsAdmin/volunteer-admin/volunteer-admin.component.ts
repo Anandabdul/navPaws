@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { globalConstant } from 'src/app/common/global.constant';
 
 @Component({
   selector: 'app-volunteer-admin',
@@ -25,9 +26,8 @@ export class VolunteerAdminComponent implements OnInit{
 
   getTempVolunteerData() {
 
-    let volunteersAPI = "https://retoolapi.dev/xzR1uz/pawsvolunteerData";
     
-    this.HttpClient.get<any>(volunteersAPI).subscribe (
+    this.HttpClient.get<any>(globalConstant.volunteersAPI).subscribe (
       (data: any) => {
         this.TempVolunteerData = data;
       }
@@ -35,8 +35,8 @@ export class VolunteerAdminComponent implements OnInit{
   }
   
   deleteTempVolunteerDate(data: any) {
-    let volunteersAPI = "https://retoolapi.dev/xzR1uz/pawsvolunteerData" + "/" + data.id;
-    this.HttpClient.delete(volunteersAPI).subscribe (
+    
+    this.HttpClient.delete(globalConstant.volunteersAPI + "/" + data.id).subscribe (
       () => {
         this.ngOnInit();
       }
@@ -45,7 +45,6 @@ export class VolunteerAdminComponent implements OnInit{
 
   savePerVolunteerData(data: any) {
     
-    let permVolunteersAPI = "https://retoolapi.dev/qzbaSi/pawsPermVolunteers";
 
     let permVolunteersInfo = {
       "name": data.name,
@@ -56,7 +55,7 @@ export class VolunteerAdminComponent implements OnInit{
       "position": "Newbie Volunteer",
     }
     
-    this.HttpClient.post(permVolunteersAPI, permVolunteersInfo).subscribe (
+    this.HttpClient.post(globalConstant.permVolunteersAPI, permVolunteersInfo).subscribe (
       () => {
         alert("We Got a New Volunteer, Congradulations!");
         this.deleteTempVolunteerDate(data);
@@ -65,10 +64,8 @@ export class VolunteerAdminComponent implements OnInit{
   }
 
   getPermVolunteerData() {
-
-    let permVolunteersAPI = "https://retoolapi.dev/qzbaSi/pawsPermVolunteers";
     
-    this.HttpClient.get<any>(permVolunteersAPI).subscribe (
+    this.HttpClient.get<any>(globalConstant.permVolunteersAPI).subscribe (
       (data: any) => {
         this.permVolunteerData = data;
       }

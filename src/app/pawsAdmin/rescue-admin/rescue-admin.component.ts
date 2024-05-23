@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { globalConstant } from 'src/app/common/global.constant';
 
 @Component({
   selector: 'app-rescue-admin',
@@ -18,8 +19,7 @@ export class RescueAdminComponent implements OnInit{
 
 
   getRescueInfo() {
-    let rescueDetailsAPI = "https://retoolapi.dev/6L9XDB/rescueDetails"; 
-    this.HttpClient.get<any>(rescueDetailsAPI).subscribe (
+    this.HttpClient.get<any>(globalConstant.rescueDetailsAPI).subscribe (
       (data: any) => {
         this.rescueLists = data;
       }, err => {
@@ -29,8 +29,7 @@ export class RescueAdminComponent implements OnInit{
   }
 
   deleteRescueInfo(rescueList: any) {
-    let rescueDetailsAPI = "https://retoolapi.dev/6L9XDB/rescueDetails" + '/' + rescueList.id; 
-    this.HttpClient.delete(rescueDetailsAPI).subscribe (
+    this.HttpClient.delete(globalConstant.rescueDetailsAPI + '/' + rescueList.id).subscribe (
       (data: any) => {
         this.rescueLists = data;
         this.ngOnInit();

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SessionService } from 'src/app/services/session.service';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
+import { globalConstant } from 'src/app/common/global.constant';
 
 @Component({
   selector: 'app-login',
@@ -39,13 +40,9 @@ export class LoginComponent implements OnInit{
   
 
   getUsers(){
-    
-    let userUrl = "https://retoolapi.dev/h0aIaN/navPawsUsers" + "?regUsername=" + this.loginForm.value.regUsername + "&regPassword=" + this.loginForm.value.regPassword;
-    let adminUrl = "https://retoolapi.dev/rAKk3e/navPawsAdmin" + "?regUsername=" + this.loginForm.value.regUsername + "&regPassword=" + this.loginForm.value.regPassword;
-
 
     if (this.loginForm.value.accountType === "user") {
-      this.HttpClient.get(userUrl).subscribe (
+      this.HttpClient.get(globalConstant.userUrl + "?regUsername=" + this.loginForm.value.regUsername + "&regPassword=" + this.loginForm.value.regPassword).subscribe (
       (users: any) => {
         console.log(users)
         if (users && users.length >= 0 && users[0].regUsername == this.loginForm.value.regUsername && users[0].regPassword == this.loginForm.value.regPassword) {
@@ -56,7 +53,7 @@ export class LoginComponent implements OnInit{
       }
       );
     } else if (this.loginForm.value.accountType === "admin") {
-            this.HttpClient.get(adminUrl).subscribe (
+            this.HttpClient.get(globalConstant.adminUrl + "?regUsername=" + this.loginForm.value.regUsername + "&regPassword=" + this.loginForm.value.regPassword).subscribe (
       (users: any) => {
         console.log(users)
         if (users && users.length >= 0 && users[0].regUsername == this.loginForm.value.regUsername && users[0].regPassword == this.loginForm.value.regPassword) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { globalConstant } from 'src/app/common/global.constant';
 
 @Component({
   selector: 'app-pet-data',
@@ -31,7 +32,6 @@ export class PetDataComponent implements OnInit{
   };
 
   savePetData() {
-    let rescuedAnimalData = "https://retoolapi.dev/KfpuRF/rescuedAnimalData";
     
     let sendPetData = {
       "petName": this.petname,
@@ -44,7 +44,7 @@ export class PetDataComponent implements OnInit{
       "adoptedToMobile": 0,
     };
     
-    this.HttpClient.post(rescuedAnimalData, sendPetData).subscribe (
+    this.HttpClient.post(globalConstant.rescuedAnimalData, sendPetData).subscribe (
       (data: any) => {
         alert("Pet's Data Added to the DataBase!");
         this.ngOnInit();
@@ -54,8 +54,7 @@ export class PetDataComponent implements OnInit{
   };
 
   getPetData() {
-    let rescuedAnimalData = "https://retoolapi.dev/KfpuRF/rescuedAnimalData";
-    this.HttpClient.get<any>(rescuedAnimalData).subscribe (
+    this.HttpClient.get<any>(globalConstant.rescuedAnimalData).subscribe (
       (data: any) => {
         this.petData = data;
       }
@@ -63,8 +62,8 @@ export class PetDataComponent implements OnInit{
   };
   
   deletePetData(data: any) {
-    let rescuedAnimalData = "https://retoolapi.dev/KfpuRF/rescuedAnimalData" + '/' + data.id;
-    this.HttpClient.delete(rescuedAnimalData).subscribe (
+
+    this.HttpClient.delete(globalConstant.rescuedAnimalData + '/' + data.id).subscribe (
       () => {
         alert(`${data.petName}'s data Deleted Sucessfully!`);
         this.ngOnInit();

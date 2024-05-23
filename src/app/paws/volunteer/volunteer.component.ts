@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SessionService } from 'src/app/services/session.service';
 import { HttpClient } from '@angular/common/http';
+import { globalConstant } from 'src/app/common/global.constant';
 
 @Component({
   selector: 'app-volunteer',
@@ -27,8 +28,6 @@ export class VolunteerComponent implements OnInit{
 
   applyVolunteer() {
     
-    let volunteersAPI = "https://retoolapi.dev/xzR1uz/pawsvolunteerData";
-
     let volunteerData = {
       "name": this.volunteerForm.value.name,
       "age": this.volunteerForm.value.age,
@@ -37,7 +36,7 @@ export class VolunteerComponent implements OnInit{
       "address": this.volunteerForm.value.address
     };
 
-      this.HttpClient.post(volunteersAPI, volunteerData).subscribe (
+      this.HttpClient.post(globalConstant.volunteersAPI, volunteerData).subscribe (
         (data: any) => {
           alert("Application for Volunteering Submitted Sucessfully!");
           this.ngOnInit();

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { SessionService } from 'src/app/services/session.service';
 import { HttpClient } from '@angular/common/http';
+import { globalConstant } from 'src/app/common/global.constant';
 
 @Component({
   selector: 'app-rescue',
@@ -10,7 +11,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RescueComponent implements OnInit {
 
-  constructor (private SessionService: SessionService, private HttpClient: HttpClient) { }
+  constructor (private SessionService: SessionService, 
+               private HttpClient: HttpClient) { }
+
   rescueForm: any;
 
   ngOnInit(): void {
@@ -26,7 +29,6 @@ export class RescueComponent implements OnInit {
   }
 
   postRescue() {
-    let rescueDetailsAPI = "https://retoolapi.dev/6L9XDB/rescueDetails";
     let aniType = this.rescueForm.value.animalType;
     let aniTypeOthers = '';
     if (aniType === "others") {
@@ -43,7 +45,7 @@ export class RescueComponent implements OnInit {
       "mobNumber": this.rescueForm.value.mobNumber,
     }
     
-    this.HttpClient.post(rescueDetailsAPI, rescueInfo).subscribe (
+    this.HttpClient.post(globalConstant.rescueDetailsAPI, rescueInfo).subscribe (
       (data: any) => {
         alert("Submitted Sucessfully! \n We will contact you ASAP.");
       }
