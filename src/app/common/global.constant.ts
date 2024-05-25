@@ -13,5 +13,7 @@ export class globalConstant {
   static userUrl = "https://retoolapi.dev/h0aIaN/navPawsUsers";
 
   static adminUrl = "https://retoolapi.dev/rAKk3e/navPawsAdmin";
+
+  static donateAPI = "https://retoolapi.dev/sZ8iTN/pawsDonate";
   
 }

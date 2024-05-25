@@ -46,7 +46,7 @@ export class RescueComponent implements OnInit {
     }
     
     this.HttpClient.post(globalConstant.rescueDetailsAPI, rescueInfo).subscribe (
-      (data: any) => {
+      () => {
         alert("Submitted Sucessfully! \n We will contact you ASAP.");
       }
     );

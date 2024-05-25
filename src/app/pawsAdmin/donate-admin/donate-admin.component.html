@@ -1,1 +1,102 @@
 <app-nav-bar-admin> </app-nav-bar-admin>
+<main class="">
+  <h1 class="fw-bold text-warning text-center" style="margin-top: 60px;">Total Stock</h1>
+  
+  <section class="d-flex justify-content-center">
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Newspapers</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{newspapers}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Towels</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{towels}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">BedSheets</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{bedsheets}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 18rem;">
+      <div class="card-header fw-bold text-center">Money &#8377;</div>
+      <div class="card-body">
+        <p class="card-text text-success fw-bold text-center" style="font-size: 60px;">{{money}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Tarpaulins</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{tarpaulins}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Dettol</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{dettol}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Dog Collars</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{dogCollars}}</p>
+      </div>
+    </div>
+  </section>
+  <section class="d-flex justify-content-center">
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Masks & gloves</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{masksGloves}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Rice</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{rice}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Wheat</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{wheat}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Bird Feed</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{birdFeed}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Pedigree</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{pediegree}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Marie Biscuits</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{marieBiscuits}}</p>
+      </div>
+    </div>
+    <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
+      <div class="card-header fw-bold text-center">Cat Food</div>
+      <div class="card-body">
+        <p class="card-text text-warning fw-bold text-center" style="font-size: 60px;">{{catFood}}</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <h1 class="fw-bold text-warning text-center mb-3" style="margin-top: 60px;">Donates You Received</h1>
+  <section class="container py-3 mb-4 card shadow">
+    <div *ngFor="let data of donateData">
+      <span *ngIf="data.as === 'money'" class="card m-2 p-3 bg-success-subtle fs-4">{{data.name}}: ({{data.mobile}}) have sent you &#8377;{{data.amount}} {{data.cashCategory}}.</span>
+      <span *ngIf="data.as === 'stuff'" class="card m-2 p-3 bg-warning-subtle fs-4">{{data.name}}: ({{data.mobile}}) have sent you stuffs like:<span *ngFor="let item of data.stuff">{{item.category}}: {{item.count}}</span></span>
+    </div>
+  </section>
+</main>

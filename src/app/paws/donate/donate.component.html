@@ -50,7 +50,84 @@
   </section>
 
   <section class="container card shadow mb-4">
-    <div class="row">Cash</div>
-    <div class="row">Stuffs</div>
+    <div class="row d-flex justify-content-center">
+      <h4 class="text-warning text-center fw-bold my-3">In Money</h4>
+      <div class="text-end fs-4"><span class="text-warning">Wallet: &#8377;</span>&nbsp;<span>{{cashWallet}}</span></div>
+      <div class="col-sm-4 m-2">
+        <div class="row">
+          Name: <input [(ngModel)]="name" class="form-control mt-2 bg-secondary-subtle" type="text"/> &nbsp; &nbsp;
+        </div>
+        <div class="row">
+          Mobile: <input [(ngModel)]="mobile" class="form-control mt-2 bg-secondary-subtle" type="number">
+        </div>
+      </div>
+      <div class="col-sm-4 m-2">
+        <div class="row">
+          Category:
+          <select [(ngModel)]="cashCategory" class="form-select bg-secondary-subtle mt-2" name="cashOption" id="cashOption">
+            <option value="">--Select--</option>
+            <option value="For Medicines">For Medicines</option>
+            <option value="For Office">For Office</option>
+            <option value="For Food">For Food</option>
+            <option value="For Sanitaion">For Sanitation</option>
+            <option value="To The Volunteers">To The Volunteers</option>
+          </select> &nbsp; &nbsp;
+        </div>
+        <div class="row">
+          Amount: &#8377;<input [(ngModel)]="amount" class="form-control mt-2 bg-secondary-subtle" type="number">
+        </div>
+      </div>
+      <div class="col-sm-4 m-2">
+        <div class="row">
+          <button class="btn btn-warning" (click)="sendMoney()">Send Money</button>
+        </div>
+      </div>
+    </div><hr>
+    <div class="row d-flex mb-4 justify-content-center">
+      <h4 class="text-warning text-center fw-bold my-2">In Stuffs</h4>
+      <div class="col-sm-4 me-2 mb-2">
+        <div class="row">
+          Name: <input [(ngModel)]="nameForStuff" class="form-control mt-2 bg-secondary-subtle" type="text"/>
+        </div>
+        <div class="row mt-2">
+          Mobile: <input [(ngModel)]="mobileForStuff" class="form-control mt-2 bg-secondary-subtle" type="number">
+        </div>
+        <div class="row mt-2">
+          Category:
+          <select [(ngModel)]="stuffForStuff" class="form-select bg-secondary-subtle mt-2" name="cashOption" id="cashOption">
+            <option value="Newspaper">Newspapers</option>
+            <option value="Towels">Towels</option>
+            <option value="Bedsheets">Bedsheets</option>
+            <option value="Tarpaulins">Tarpaulins</option>
+            <option value="Dettol">Dettol</option>
+            <option value="Dog Collars">Dog Collars</option>
+            <option value="Surgical Masks & Gloves">Surgical Masks & Gloves</option>
+            <option value="Rice">Rice</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Bird Feed">Bird Feed</option>
+            <option value="Pedigree">Pedigree</option>
+            <option value="Marie Biscuits">Marie Biscuits</option>
+            <option value="Cat Food">Cat Food</option>
+          </select> &nbsp; &nbsp;
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-8">
+            <input [(ngModel)]="countOfStuff" placeholder="Count" class="form-control bg-secondary-subtle" type="number">
+          </div>
+          <div class="col-sm-4">
+            <button class="btn btn-success w-100" (click)="addDonateCart()">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 ms-2 bg-warning-subtle rounded">
+        <p class="m-1">Your Donate Cart is here:</p>
+        <ul *ngFor="let stuff of stuffs">
+          <li class="card-text px-2"><span>{{stuff.category}}</span>:&nbsp;<span class="fw-bold">{{stuff.count}}</span>
+          <button class="btn btn-sm btn-danger mx-2" (click)="deleteFrmCart(stuff)">Delete</button></li>
+        </ul>
+          <button class="btn btn-success" (click)="sendStuff()">Send Stuffs</button>
+      </div>
+    </div>
   </section>
 </main>
