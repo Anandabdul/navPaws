@@ -13,6 +13,7 @@ import { DonateAdminComponent } from './pawsAdmin/donate-admin/donate-admin.comp
 import { RescueAdminComponent } from './pawsAdmin/rescue-admin/rescue-admin.component';
 import { VolunteerAdminComponent } from './pawsAdmin/volunteer-admin/volunteer-admin.component';
 import { PetDataComponent } from './pawsAdmin/pet-data/pet-data.component';
+import { AboutusComponent } from './paws/aboutus/aboutus.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'donateAdmin',component:DonateAdminComponent},
   {path:'rescueAdmin',component:RescueAdminComponent},
   {path:'volunteerAdmin',component:VolunteerAdminComponent},
-  {path: 'petData', component:PetDataComponent}
+  {path: 'petData', component:PetDataComponent},
+  {path: 'aboutUs', component:AboutusComponent}
 
 ];
 

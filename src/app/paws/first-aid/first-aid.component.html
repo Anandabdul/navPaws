@@ -1,1 +1,15 @@
 <app-navbar></app-navbar>
+
+<main class="container-fluid" style="margin-top: 60px;">
+  <h1 class="fw-bold text-center text-warning">Quick First Aid Instructions.</h1>
+  <hr>
+  <section class="row">
+    <aside class="col-3">
+      <div *ngFor="let content of firstAidContent" class="btn text-start ps-3 w-100 m-1 bg-secondary-subtle p-2" (click)="displayContent(content.heading)">{{content.heading}}</div>
+    </aside>
+    <aside class="col-8">
+      <h3 class="text-center text-warning fw-bold">{{contHeading}}</h3>
+      <p class="container fs-4">{{contContent}}</p>
+    </aside>
+  </section>
+</main>

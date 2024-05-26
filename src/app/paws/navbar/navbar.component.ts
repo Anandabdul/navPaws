@@ -18,6 +18,7 @@ export class NavbarComponent {
   successBlogPage: string = "/successBlog";
   volunteerPage: string = "/volunteer";
   adoptPage: string = "/adopt";
+  aboutUsPage: string = "/aboutUs";
 
   logout() {
     this.SessionService.removeSession();

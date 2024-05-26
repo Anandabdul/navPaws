@@ -23,6 +23,7 @@ import { NavBarAdminComponent } from './pawsAdmin/nav-bar-admin/nav-bar-admin.co
 import { DonateAdminComponent } from './pawsAdmin/donate-admin/donate-admin.component';
 import { VolunteerAdminComponent } from './pawsAdmin/volunteer-admin/volunteer-admin.component';
 import { PetDataComponent } from './pawsAdmin/pet-data/pet-data.component';
+import { AboutusComponent } from './paws/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PetDataComponent } from './pawsAdmin/pet-data/pet-data.component';
     NavBarAdminComponent,
     DonateAdminComponent,
     VolunteerAdminComponent,
-    PetDataComponent
+    PetDataComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,

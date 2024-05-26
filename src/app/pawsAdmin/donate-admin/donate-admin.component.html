@@ -22,9 +22,9 @@
       </div>
     </div>
     <div class="card border-warning mx-2 mb-3" style="width: 18rem;">
-      <div class="card-header fw-bold text-center">Money &#8377;</div>
+      <div class="card-header fw-bold text-center">Money</div>
       <div class="card-body">
-        <p class="card-text text-success fw-bold text-center" style="font-size: 60px;">{{money}}</p>
+        <p class="card-text text-success fw-bold text-center" style="font-size: 40px;">{{money | currency: 'INR'}}</p>
       </div>
     </div>
     <div class="card border-warning mx-2 mb-3" style="width: 9.5rem;">
@@ -95,7 +95,7 @@
   <h1 class="fw-bold text-warning text-center mb-3" style="margin-top: 60px;">Donates You Received</h1>
   <section class="container py-3 mb-4 card shadow">
     <div *ngFor="let data of donateData">
-      <span *ngIf="data.as === 'money'" class="card m-2 p-3 bg-success-subtle fs-4">{{data.name}}: ({{data.mobile}}) have sent you &#8377;{{data.amount}} {{data.cashCategory}}.</span>
+      <span *ngIf="data.as === 'money'" class="card m-2 p-3 bg-success-subtle fs-4">{{data.name}}: ({{data.mobile}}) have sent you {{data.amount | currency: 'INR'}} {{data.cashCategory}}.</span>
       <span *ngIf="data.as === 'stuff'" class="card m-2 p-3 bg-warning-subtle fs-4">{{data.name}}: ({{data.mobile}}) have sent you stuffs like:<span *ngFor="let item of data.stuff">{{item.category}}: {{item.count}}</span></span>
     </div>
   </section>
